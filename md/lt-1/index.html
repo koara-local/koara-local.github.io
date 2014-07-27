@@ -62,7 +62,7 @@ Kohei Arao
 --
 
 シバン (Unix) by wikipedia
-```txt
+```
 シバンまたはシェバン (shebang) とは
 UNIXのスクリプトの#!から始まる1行目のこと。
 起動してスクリプトを読み込むインタプリタを指定する
@@ -87,6 +87,27 @@ UNIXのスクリプトの#!から始まる1行目のこと。
 ---
 
 ##変数
+
+--
+変数の使用例
+
+```bash
+#! /bin/bash
+
+hoge=hoge
+fuga=fuga
+
+echo ${hoge}
+echo ${fuga}
+echo ${hoge} and ${fuga}
+```
+
+出力結果
+```
+hoge
+fuga
+hoge and fuga
+```
 
 ---
 
