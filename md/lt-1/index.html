@@ -70,6 +70,19 @@ UNIXのスクリプトの#!から始まる1行目のこと。
 
 --
 
+他のスクリプト言語でも使われます
+
+ruby
+```ruby
+#!/usr/bin/env ruby
+```
+
+python
+```python
+#!/usr/bin/env python
+```
+--
+
 よく以下のように設定されていますが
 
 ```bash
@@ -138,7 +151,7 @@ Mon Jul 28 12:56:26 JST 2014
 
 --
 
-関数定義して、echoで標準出力として返す
+基本的に関数の定義をして、echoで標準出力として返す
 ```bash
 #!/bin/bash
 
@@ -147,6 +160,7 @@ function hoge_func { echo "hoge"; }
 
 --
 
+##使用例
 echoを色付きに拡張
 ```bash
 #!/bin/bash
@@ -154,14 +168,14 @@ echoを色付きに拡張
 # エラー用 echo [赤・太字]
 function echo_error_ { echo -e "\e[1;31m$*\e[m"; }
 # エラー用 echo [赤・太字]
-function echo_success_ { echo -e "\e[1;32m$*\e[m"; }"]]" }"]]" }
+function echo_success_ { echo -e "\e[1;32m$*\e[m"; }
 ```
 
 ---
 
 ##sed, awk, parlなどとの連携
 
----
+--
 
 特定プロセスのCPU, MEMORY使用率を表示
 ```bash
