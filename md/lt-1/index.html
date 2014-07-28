@@ -69,7 +69,6 @@ UNIXのスクリプトの#!から始まる1行目のこと。
 ```
 
 --
-
 他のスクリプト言語でも使われます
 
 ruby
@@ -143,6 +142,29 @@ echo ${DATE}
 ```
 /tmp
 Mon Jul 28 12:56:26 JST 2014
+```
+
+---
+
+##制御構文
+
+--
+
+```bash
+#!/bin/bash
+
+# Link
+DOT_FILES=( \
+    vim \
+    vimrc \
+)
+
+for file in ${DOT_FILES[@]}
+do
+  if [ ! -e ~/.${file} ]; then
+    ln -si ~/dotvim/${file} ~/.${file}
+  fi
+done
 ```
 
 ---
