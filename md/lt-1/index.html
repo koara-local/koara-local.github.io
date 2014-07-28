@@ -92,10 +92,10 @@ UNIXのスクリプトの#!から始まる1行目のこと。
 変数の使用例
 
 ```bash
-#! /bin/bash
+#!/bin/bash
 
 hoge=hoge
-fuga=fuga
+fuga="fuga"
 
 echo ${hoge}
 echo ${fuga}
@@ -111,7 +111,51 @@ hoge and fuga
 
 ---
 
+##コマンド実行結果の利用
+
+--
+
+コマンド実行結果を変数に代入
+```bash
+#!/bin/bash
+
+PWD=$(pwd)
+DATE=$(date)
+
+echo ${PWD}
+echo ${DATE}
+```
+
+出力結果
+```
+/tmp
+Mon Jul 28 12:56:26 JST 2014
+```
+
+---
+
 ##関数
+
+--
+
+関数定義して、echoで標準出力として返す
+```bash
+#!/bin/bash
+
+function hoge_func { echo "hoge"; }
+```
+
+--
+
+echoを色付きに拡張
+```bash
+#!/bin/bash
+
+# エラー用 echo [赤・太字]
+function echo_error_ { echo -e "\e[1;31m$*\e[m"; }
+# エラー用 echo [赤・太字]
+function echo_success_ { echo -e "\e[1;32m$*\e[m"; }"]]" }"]]" }
+```
 
 ---
 
